@@ -1,0 +1,447 @@
+/* ============================================================
+   OSSAGA - Dashboard Admin & Portal Anggota OSIS Styling
+   Theme: Modern Creative • Futuristic • Premium Dark Interface
+   Palette: Deep Black, Dark Navy, Primary Navy, Secondary Navy,
+            Electric Blue, Light Blue, White.
+   ============================================================ */
+
+:root {
+  --sidebar-w: 270px;
+  --topbar-h: 76px;
+}
+
+body.admin-body {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--deep-black);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(22, 78, 145, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(37, 131, 232, 0.1) 0%, transparent 45%);
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* ================= SIDEBAR ================= */
+.admin-sidebar {
+  width: var(--sidebar-w);
+  background: var(--dark-navy);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 4px 0 25px rgba(5, 8, 15, 0.6);
+}
+
+.sidebar-header {
+  height: var(--topbar-h);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(10, 25, 47, 0.5);
+}
+
+.sidebar-brand-logo {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--royal-blue) 0%, var(--electric-blue) 100%);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 0 16px rgba(37, 131, 232, 0.4);
+  border: 1px solid var(--border-glow);
+}
+
+.sidebar-brand-text h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-brand-text p {
+  font-size: 0.72rem;
+  color: var(--light-blue);
+  font-weight: 600;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.menu-category {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 14px 14px 6px 14px;
+  font-weight: 800;
+}
+
+.sidebar-item a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.sidebar-item a .icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--light-blue);
+  transition: var(--transition);
+}
+
+.sidebar-item a:hover {
+  background: var(--primary-navy);
+  color: var(--white);
+  border-color: var(--border-subtle);
+}
+
+.sidebar-item a:hover .icon-svg {
+  color: var(--electric-blue);
+  filter: drop-shadow(0 0 8px rgba(37, 131, 232, 0.7));
+}
+
+.sidebar-item.active a {
+  background: linear-gradient(135deg, rgba(22, 78, 145, 0.5) 0%, rgba(37, 131, 232, 0.3) 100%);
+  color: var(--white);
+  border-color: var(--border-electric);
+  box-shadow: var(--glow-subtle);
+}
+
+.sidebar-item.active a .icon-svg {
+  color: var(--white);
+  filter: drop-shadow(0 0 8px rgba(37, 131, 232, 0.8));
+}
+
+.sidebar-footer {
+  padding: 18px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(10, 25, 47, 0.6);
+}
+
+/* ================= MAIN CONTENT & TOPBAR ================= */
+.admin-main {
+  margin-left: var(--sidebar-w);
+  flex-grow: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-topbar {
+  height: var(--topbar-h);
+  background: rgba(7, 20, 38, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  background: var(--primary-navy);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.user-avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--electric-blue);
+}
+
+.admin-content {
+  padding: 34px 32px;
+  flex-grow: 1;
+}
+
+/* ================= TAB SECTIONS ================= */
+.tab-section {
+  display: none;
+  animation: fadeInTab 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-section.active {
+  display: block;
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= STAT CARDS ================= */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: var(--primary-navy);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-electric);
+  box-shadow: var(--glow-electric);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 131, 232, 0.12);
+  color: var(--light-blue);
+  border: 1px solid var(--border-electric);
+  box-shadow: 0 0 16px rgba(37, 131, 232, 0.15);
+  transition: var(--transition);
+}
+
+.stat-icon .icon-svg {
+  width: 26px;
+  height: 26px;
+  transition: var(--transition);
+}
+
+.stat-card:hover .stat-icon {
+  background: var(--electric-blue);
+  color: var(--white);
+  box-shadow: 0 0 20px rgba(37, 131, 232, 0.6);
+  transform: scale(1.05);
+}
+
+/* ================= TABLES ================= */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--primary-navy);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.admin-table th {
+  background: var(--secondary-navy);
+  color: var(--light-blue);
+  padding: 16px 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.08);
+  color: #cbd5e1;
+  vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+  background: rgba(16, 36, 62, 0.4);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action button in table */
+.action-btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.btn-icon-edit {
+  background: rgba(37, 131, 232, 0.18);
+  color: var(--light-blue);
+  border-color: var(--border-electric);
+}
+
+.btn-icon-edit:hover {
+  background: var(--electric-blue);
+  color: var(--white);
+}
+
+.btn-icon-delete {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.btn-icon-delete:hover {
+  background: #ef4444;
+  color: var(--white);
+}
+
+/* ================= KTA DIGITAL (KARTU TANDA ANGGOTA) ================= */
+.kta-card {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #071426 0%, #0A192F 50%, #10243E 100%);
+  border: 1px solid var(--border-glow);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow-lg), var(--glow-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.kta-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(37, 131, 232, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.kta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.kta-body {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.kta-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 2px solid var(--electric-blue);
+  box-shadow: 0 0 16px rgba(37, 131, 232, 0.4);
+}
+
+.kta-barcode {
+  font-family: monospace;
+  letter-spacing: 4px;
+  font-size: 1.1rem;
+  color: var(--light-blue);
+  text-align: center;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+/* ================= RESPONSIVE ADMIN ================= */
+@media (max-width: 1024px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  .admin-main {
+    margin-left: 0;
+  }
+  .admin-topbar {
+    padding: 0 18px;
+  }
+  .admin-content {
+    padding: 20px 16px;
+  }
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}

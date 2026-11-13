@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Pengurus OSIS - OSSAGA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand-logo">OS</div>
+      <div class="sidebar-brand-text">
+        <h2>OSSAGA PANEL</h2>
+        <p>OSIS SMA Negeri 1 SAGARA</p>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li class="menu-category">Menu Utama</li>
+      <li class="sidebar-item active">
+        <a href="#overview" data-tab="overview">
+          <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+          Ringkasan Dashboard
+        </a>
+      </li>
+
+      <li class="menu-category">Khusus Internal Pengurus</li>
+      <li class="sidebar-item">
+        <a href="#kta" data-tab="kta">
+          <svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="7" cy="15" r="1.5"/></svg>
+          KTA Digital OSIS
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#notulensi" data-tab="notulensi">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Notulensi Rapat Internal
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#presensi" data-tab="presensi">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Presensi Rapat & Event
+        </a>
+      </li>
+
+      <li class="menu-category admin-only">Manajemen Organisasi</li>
+      <li class="sidebar-item admin-only">
+        <a href="#anggota" data-tab="anggota">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Data 30 Fungsionaris (NIS)
+        </a>
+      </li>
+      <li class="sidebar-item admin-only">
+        <a href="#proker" data-tab="proker">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          Program Kerja (Proker)
+        </a>
+      </li>
+      <li class="sidebar-item admin-only">
+        <a href="#berita" data-tab="berita">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m4 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9"/><line x1="7" y1="9" x2="11" y2="9"/><line x1="7" y1="13" x2="15" y2="13"/><line x1="7" y1="17" x2="15" y2="17"/></svg>
+          Publikasi Warta
+        </a>
+      </li>
+      <li class="sidebar-item admin-only">
+        <a href="#agenda" data-tab="agenda">
+          <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Kelola Agenda
+        </a>
+      </li>
+      <li class="sidebar-item admin-only">
+        <a href="#galeri-admin" data-tab="galeri-admin">
+          <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Manajemen Galeri
+        </a>
+      </li>
+      <li class="sidebar-item admin-only">
+        <a href="#aspirasi" data-tab="aspirasi">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Kotak Aspirasi & Pesan
+        </a>
+      </li>
+
+      <li class="menu-category superadmin-only">Super Administrator</li>
+      <li class="sidebar-item superadmin-only">
+        <a href="#pengaturan" data-tab="pengaturan">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Database & Pengaturan
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a href="../index.html" class="btn btn-secondary btn-sm" style="width: 100%; justify-content: flex-start;">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Lihat Web Publik
+        </a>
+        <button onclick="handleLogout()" class="btn btn-sm" style="width: 100%; justify-content: flex-start; background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3);">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Keluar (Logout)
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="admin-main">
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="topbar-left" style="display: flex; align-items: center; gap: 14px;">
+        <button id="admin-sidebar-toggle" class="btn btn-secondary btn-sm" style="display: none;">
+          <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Menu
+        </button>
+        <span id="topbar-role-badge" class="badge badge-primary">Role Akses</span>
+      </div>
+
+      <div class="topbar-right">
+        <div class="user-profile-badge">
+          <img id="topbar-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=128&q=80" alt="Avatar" class="user-avatar-sm">
+          <div>
+            <div id="topbar-user-name" style="font-weight: 800; font-size: 0.88rem; color: var(--white); line-height: 1.1;">Nama Pengguna</div>
+            <div id="topbar-user-nis" style="font-size: 0.72rem; color: var(--light-blue);">NIS: -</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Wrapper -->
+    <div class="admin-content">
+
+      <!-- ================= 1. TAB OVERVIEW ================= -->
+      <section id="tab-overview" class="tab-section active">
+        <div class="card" style="padding: 28px; margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="badge badge-primary"><span class="badge-dot"></span> Sistem Pengurus Terpadu</span>
+            <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--white); margin: 6px 0 4px 0;">Dashboard Pengurus OSSAGA</h2>
+            <p id="dashboard-welcome-text" style="color: var(--text-muted); font-size: 0.94rem;">Memuat sesi pengurus aktif...</p>
+          </div>
+          <a href="../index.php" class="btn btn-secondary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Kunjungi Halaman Publik
+          </a>
+        </div>
+
+        <!-- Box Presensi Mandiri (Untuk Anggota Login NIS) -->
+        <div id="quick-presensi-box" style="display: none; background: linear-gradient(135deg, var(--royal-blue), var(--electric-blue)); color: white; border-radius: var(--radius-lg); padding: 26px; margin-bottom: 28px; box-shadow: var(--glow-electric);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-blue); font-weight: 800;">Presensi Kehadiran Fungsionaris</div>
+              <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 4px;">Rapat Pleno & Kegiatan Pengurus Hari Ini</h3>
+              <p style="font-size: 0.9rem; color: #e2e8f0;">Catat kehadiran mandiri terverifikasi menggunakan akun NIS Anda secara resmi.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button onclick="submitAbsenMandiri('Hadir')" class="btn btn-secondary btn-sm">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Absen Hadir
+              </button>
+              <button onclick="submitAbsenMandiri('Izin')" class="btn btn-outline btn-sm">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Kirim Izin
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistik Metrik -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div>
+              <div class="stat-value" id="stat-anggota-count">0 / 30</div>
+              <div class="stat-label">Fungsionaris Terdaftar (NIS)</div>
+            </div>
+            <div class="stat-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24" style="width: 26px; height: 26px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <div class="stat-value" id="stat-proker-count">0</div>
+              <div class="stat-label">Program Kerja Terjadwal</div>
+            </div>
+            <div class="stat-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24" style="width: 26px; height: 26px;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <div class="stat-value" id="stat-berita-count">0</div>
+              <div class="stat-label">Warta Diterbitkan</div>
+            </div>
+            <div class="stat-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24" style="width: 26px; height: 26px;"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m4 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9"/><line x1="7" y1="9" x2="11" y2="9"/><line x1="7" y1="13" x2="15" y2="13"/><line x1="7" y1="17" x2="15" y2="17"/></svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <div class="stat-value" id="stat-aspirasi-count">0</div>
+              <div class="stat-label">Aspirasi Siswa Menunggu</div>
+            </div>
+            <div class="stat-icon">
+              <svg class="icon-svg" viewBox="0 0 24 24" style="width: 26px; height: 26px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Proker Berjalan -->
+        <div class="card" style="padding: 26px;">
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 18px; color: var(--white);">Program Kerja Prioritas Bulan Ini</h3>
+          <div id="overview-proker-list">
+            <!-- Rendered by admin.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. TAB DATA 30 ANGGOTA OSIS ================= -->
+      <section id="tab-anggota" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Data 30 Fungsionaris OSIS (Berbasis NIS)</h2>
+            <p id="anggota-quota-summary" style="color: var(--text-muted); font-size: 0.9rem;">Kuota sistem: maksimal 30 anggota aktif login NIS.</p>
+          </div>
+          <div class="admin-only">
+            <button onclick="openUserModal(false)" class="btn btn-primary btn-sm">
+              <svg class="icon-svg" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Tambah Anggota Manual
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Anggota</th>
+                <th>Nomor Induk Siswa (NIS)</th>
+                <th>Kelas</th>
+                <th>Jabatan / Sekbid</th>
+                <th>Kontak WA</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="anggota-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 3. TAB NOTULENSI RAPAT INTERNAL ================= -->
+      <section id="tab-notulensi" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Notulensi Rapat Internal OSIS</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Dokumen internal bersifat rahasia dan hanya dapat diakses oleh fungsionaris pengurus.</p>
+          </div>
+          <div class="admin-only">
+            <button onclick="openNotulensiModal(false)" class="btn btn-primary btn-sm">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              Catat Notulensi Baru
+            </button>
+          </div>
+        </div>
+
+        <div id="notulensi-container">
+          <!-- Rendered by admin.js -->
+        </div>
+      </section>
+
+      <!-- ================= 4. TAB PRESENSI KEGIATAN ================= -->
+      <section id="tab-presensi" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Rekapitulasi Presensi Kehadiran</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Riwayat kehadiran rapat dan agenda kegiatan seluruh pengurus.</p>
+          </div>
+          <button onclick="submitAbsenMandiri('Hadir')" class="btn btn-primary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Catat Presensi Hadir
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama & NIS Siswa</th>
+                <th>Agenda Acara</th>
+                <th>Tanggal</th>
+                <th>Waktu Masuk</th>
+                <th>Status</th>
+                <th>Keterangan</th>
+              </tr>
+            </thead>
+            <tbody id="presensi-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 5. TAB BERITA ================= -->
+      <section id="tab-berita" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Manajemen Publikasi Berita & Pengumuman</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Artikel yang diterbitkan langsung tampil di portal terbuka bagi seluruh siswa.</p>
+          </div>
+          <button onclick="openBeritaModal(false)" class="btn btn-primary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tulis Berita Baru
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Judul Berita</th>
+                <th>Kategori</th>
+                <th>Tanggal Terbit</th>
+                <th>Penulis</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="berita-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 6. TAB AGENDA ================= -->
+      <section id="tab-agenda" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Manajemen Kalender Agenda & Acara</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Kelola jadwal kegiatan sekolah mendatang.</p>
+          </div>
+          <button onclick="openAgendaModal(false)" class="btn btn-primary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tambah Agenda Baru
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Agenda</th>
+                <th>Tanggal</th>
+                <th>Waktu</th>
+                <th>Lokasi</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="agenda-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 7. TAB PROKER ================= -->
+      <section id="tab-proker" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Manajemen Program Kerja (Proker)</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Kelola program kerja per seksi bidang dan persentase capaian.</p>
+          </div>
+          <button onclick="openProkerModal(false)" class="btn btn-primary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tambah Proker Baru
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Program Kerja</th>
+                <th>Sekbid</th>
+                <th>Anggaran</th>
+                <th>Progress (%)</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="proker-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 8. TAB GALERI ================= -->
+      <section id="tab-galeri-admin" class="tab-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Manajemen Galeri Dokumentasi</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Unggah atau kelola foto kegiatan yang tampil di Lensa OSSAGA.</p>
+          </div>
+          <button onclick="openGaleriModal(false)" class="btn btn-primary btn-sm">
+            <svg class="icon-svg" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tambah Foto Galeri
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pratinjau</th>
+                <th>Judul Dokumentasi</th>
+                <th>Kategori</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="galeri-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 9. TAB ASPIRASI ================= -->
+      <section id="tab-aspirasi" class="tab-section">
+        <div style="margin-bottom: 24px;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Kotak Aspirasi & Suara Siswa</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Review aspirasi masuk dari siswa dan berikan tanggapan resmi dari pengurus OSIS.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pengirim & Kelas</th>
+                <th>Kategori</th>
+                <th>Pesan Aspirasi</th>
+                <th>Status</th>
+                <th>Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="aspirasi-table-body">
+              <!-- Rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= 10. TAB KTA DIGITAL ================= -->
+      <section id="tab-kta" class="tab-section">
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--white);">Kartu Tanda Anggota (KTA) Digital</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">Identitas fungsionaris resmi pengurus OSIS SMA Negeri 1 SAGARA.</p>
+        </div>
+
+        <div id="kta-container">
+          <!-- Rendered by admin.js -->
+        </div>
+      </section>
+
+      <!-- ================= 11. TAB PENGATURAN (SUPERADMIN ONLY) ================= -->
+      <section id="tab-pengaturan" class="tab-section superadmin-only">
+        <div style="margin-bottom: 24px;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--white);">Pengaturan Sistem & Database</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Hanya dapat diakses oleh 1 Super Administrator untuk kontrol integritas sistem.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Konfigurasi Organisasi -->
+          <div class="card" style="padding: 28px;">
+            <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 18px; color: var(--white);">Konfigurasi Organisasi</h3>
+            <form onsubmit="handleSavePengaturan(event)">
+              <div class="form-group">
+                <label class="form-label">Nama Sekolah</label>
+                <input type="text" id="cfg-sekolah" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nama Organisasi</label>
+                <input type="text" id="cfg-organisasi" class="form-control" required>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-group">
+                  <label class="form-label">Periode</label>
+                  <input type="text" id="cfg-periode" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Kuota Maksimal Anggota</label>
+                  <input type="number" id="cfg-kuota" class="form-control" value="30" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Slogan Organisasi</label>
+                <input type="text" id="cfg-slogan" class="form-control" required>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-group">
+                  <label class="form-label">Email Resmi</label>
+                  <input type="email" id="cfg-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">No. Telepon / WA</label>
+                  <input type="text" id="cfg-telepon" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Visi Organisasi</label>
+                <textarea id="cfg-visi" class="form-control" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan Konfigurasi</button>
+            </form>
+          </div>
+
+          <!-- Pemeliharaan Database -->
+          <div class="card" style="padding: 28px;">
+            <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 18px; color: var(--white);">Operasi Database</h3>
+            
+            <div style="margin-bottom: 24px;">
+              <h4 style="font-size: 0.96rem; font-weight: 800; color: var(--white); margin-bottom: 6px;">1. Ekspor Cadangan (Backup JSON)</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 12px;">Unduh seluruh data (fungsionaris, proker, berita, notulensi, aspirasi) dalam format file JSON.</p>
+              <button onclick="handleExportDatabase()" class="btn btn-secondary btn-sm">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Ekspor Database JSON
+              </button>
+            </div>
+
+            <div style="margin-bottom: 24px; border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+              <h4 style="font-size: 0.96rem; font-weight: 800; color: var(--white); margin-bottom: 6px;">2. Pulihkan Cadangan (Restore)</h4>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 12px;">Pilih file JSON cadangan untuk memulihkan seluruh basis data.</p>
+              <input type="file" id="import-json-file" accept=".json" onchange="handleImportDatabase(event)" style="font-size: 0.85rem; color: var(--text-muted);">
+            </div>
+
+            <div style="border-top: 1px solid rgba(239, 68, 68, 0.3); padding-top: 20px; background: rgba(239, 68, 68, 0.08); padding: 18px; border-radius: 12px;">
+              <h4 style="font-size: 0.96rem; font-weight: 800; color: #fca5a5; margin-bottom: 6px;">3. Reset ke Data Bawaan Pabrik</h4>
+              <p style="font-size: 0.84rem; color: #fca5a5; margin-bottom: 12px; line-height: 1.5;">Kembalikan seluruh basis data ke kondisi awal sistem (1 Superadmin, Pengurus Bawaan, dan kuota 30 fungsionaris).</p>
+              <button onclick="handleResetDatabase()" class="btn btn-sm" style="background: #ef4444; color: white; border: none;">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Reset Database Sekarang
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= MODAL ADMIN CRUD ================= -->
+  <div class="modal-overlay" id="admin-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="admin-modal-title">Form Data</h3>
+        <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="admin-modal-body">
+        <!-- Konten form dinamis oleh admin.js -->
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="../db.js"></script>
+  <script src="../app.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

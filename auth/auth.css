@@ -1,0 +1,187 @@
+/* ============================================================
+   OSSAGA - Auth Pages Styling (Modern Futuristic Theme)
+   Palette: Deep Black, Dark Navy, Primary Navy, Secondary Navy,
+            Electric Blue, Light Blue, White.
+   ============================================================ */
+
+body.auth-body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 20%, #071426 0%, #05080F 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow-y: auto;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  color: #F5F7FA;
+}
+
+body.auth-body::before {
+  content: '';
+  position: fixed;
+  top: -15%;
+  left: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(37, 131, 232, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+body.auth-body::after {
+  content: '';
+  position: fixed;
+  bottom: -15%;
+  right: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(22, 78, 145, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(10, 25, 47, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 22px;
+  box-shadow: 0 25px 50px -12px rgba(5, 8, 15, 0.9), 0 0 30px rgba(37, 131, 232, 0.25);
+  padding: 40px 36px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-logo-badge {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #7C3AED 0%, #D4F838 100%);
+  color: #000000;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 0 25px rgba(212, 248, 56, 0.4);
+  border: 2px solid #D4F838;
+}
+
+.auth-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #F5F7FA;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtitle {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+  display: flex;
+  background: #071426;
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 26px;
+  border: 1px solid rgba(96, 165, 250, 0.12);
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 11px 14px;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #94A3B8;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-tab-btn:hover {
+  color: #F5F7FA;
+}
+
+.auth-tab-btn.active {
+  background: #10243E;
+  color: #60A5FA;
+  box-shadow: 0 4px 14px rgba(5, 8, 15, 0.4);
+  border: 1px solid rgba(37, 131, 232, 0.4);
+}
+
+/* Quota Banner */
+.quota-banner {
+  background: rgba(16, 36, 62, 0.65);
+  border: 1px solid rgba(37, 131, 232, 0.35);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quota-banner-icon {
+  font-size: 1.4rem;
+  color: #60A5FA;
+  flex-shrink: 0;
+}
+
+.quota-banner-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #F5F7FA;
+}
+
+.quota-banner-desc {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(96, 165, 250, 0.12);
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.auth-footer a {
+  color: #60A5FA;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Security notice */
+.security-notice {
+  margin-top: 18px;
+  font-size: 0.76rem;
+  color: #64748B;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}

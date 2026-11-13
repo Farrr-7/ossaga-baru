@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSSAGA - Portal Resmi OSIS SMA Negeri 1 SAGARA</title>
+  <meta name="description" content="Website resmi Organisasi Siswa Intra Sekolah (OSSAGA) SMA Negeri 1 SAGARA. Pusat informasi terbuka, agenda, program kerja, dan aspirasi siswa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        OSSAGA<span class="brand-dot">.</span>
+        <span class="brand-tag">SMAN 1 SAGARA</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="#pimpinan" class="nav-link">Pimpinan</a></li>
+        <li><a href="#sekbid" class="nav-link">Sekbid</a></li>
+        <li><a href="#proker" class="nav-link">Proker</a></li>
+        <li><a href="#warta" class="nav-link">Warta</a></li>
+        <li><a href="#agenda" class="nav-link">Agenda</a></li>
+        <li><a href="#galeri" class="nav-link">Galeri</a></li>
+        <li><a href="#arcade" class="nav-link">Arcade 🎮</a></li>
+        <li><a href="#aspirasi" class="nav-link">Aspirasi</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-action-links" id="nav-user-actions">
+          <a href="auth/register.html" class="btn-dark-pill" style="padding: 9px 20px; font-size: 0.85rem;">Daftar (NIS)</a>
+          <a href="auth/login.html" class="btn-lime" style="padding: 9px 20px; font-size: 0.85rem; box-shadow: none;">Login</a>
+        </div>
+        <button class="menu-pill-btn mobile-toggle" aria-label="Toggle Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 1. HERO SECTION ================= -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Column: Typography & Action Buttons -->
+        <div class="hero-content">
+          <div class="hero-greeting-wrap">
+            <span class="hero-greeting">Hey, Kami</span>
+            <!-- Hand-drawn curved arrow doodle -->
+            <svg class="doodle-arrow-intro" viewBox="0 0 50 35" fill="none">
+              <path d="M10 6 C25 8, 38 18, 42 30 M33 27 L42 30 L43 20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="hero-title-container">
+            <h1 class="hero-main-title">OSSAGA</h1>
+            
+            <!-- Neon Lime Crown Doodle over Title -->
+            <svg class="doodle doodle-crown" viewBox="0 0 36 28" fill="none">
+              <path d="M2 24 L5 8 L18 16 L31 8 L34 24 Z" stroke="#D4F838" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <!-- Cyan Speech Bubble -->
+            <div class="speech-bubble">
+              KABINET NAWA CITA NAWASENA!
+            </div>
+          </div>
+
+          <p class="hero-subtitle">
+            Organisasi Siswa Intra Sekolah <span>•</span> SMA Negeri 1 SAGARA <span>•</span> 2026/2027
+          </p>
+
+          <p class="hero-slogan-desc">
+            Wadah aspirasi, kreasi, dan pengkaderan calon pemimpin masa depan SMA Negeri 1 SAGARA. <span class="org-slogan" style="color: #fff; font-weight: 600;">Kreatif, Kolaboratif, Berintegritas, dan Menginspirasi.</span>
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="javascript:void(0)" onclick="openShowreelModal()" class="btn-lime">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Showreel
+            </a>
+            <a href="#proker" class="btn-dark-pill">
+              Program Kerja
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="auth/register.html" class="btn-dark-pill" style="border-color: rgba(212, 248, 56, 0.4); color: var(--neon-lime);">
+              Daftar Anggota (NIS) ↗
+            </a>
+          </div>
+
+          <!-- Bottom Doodles & Stats Row -->
+          <div class="hero-stats-row">
+            <div class="stat-box">
+              <h4>30<span>/30</span></h4>
+              <p>Kuota Anggota NIS</p>
+            </div>
+            <div class="stat-box">
+              <h4>10<span> Divisi</span></h4>
+              <p>Seksi Bidang Aktif</p>
+            </div>
+            <div class="stat-box">
+              <h4>100%<span> Terbuka</span></h4>
+              <p>Aspirasi & Publik</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Waving Student Leader Mascot with Purple Hoodie -->
+        <div class="hero-visual">
+          <div class="hero-blob-bg"></div>
+
+          <!-- Floating Yellow Star Doodle -->
+          <svg class="doodle hero-doodle-star" viewBox="0 0 24 24" fill="none" style="top: 15px; right: 25px; width: 28px; height: 28px;">
+            <path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" fill="#F59E0B"/>
+          </svg>
+
+          <!-- Floating Sparkle Doodle -->
+          <svg class="doodle" viewBox="0 0 24 24" fill="none" style="bottom: 70px; left: -10px; width: 22px; height: 22px;">
+            <path d="M12 2 L13.8 8.2 L20 10 L13.8 11.8 L12 18 L10.2 11.8 L4 10 L10.2 8.2 Z" fill="#38BDF8"/>
+          </svg>
+
+          <!-- Hero Character SVG -->
+          <div class="hero-character-wrap">
+            <svg class="hero-character-img" viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <filter id="heroDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75"/>
+              </filter>
+              
+              <g filter="url(#heroDropShadow)">
+                <!-- Blue Fluid Energy Splash -->
+                <path d="M70 240 C30 180, 80 80, 190 70 C310 60, 390 140, 380 260 C370 380, 290 460, 160 450 C60 440, 100 290, 70 240 Z" fill="#1D4ED8" opacity="0.6"/>
+                
+                <!-- White Sticker Border -->
+                <path d="M210 50 C290 50, 360 110, 360 210 C370 280, 340 430, 290 450 C230 460, 170 460, 130 440 C80 410, 60 260, 80 180 C90 100, 150 50, 210 50 Z" fill="#FFFFFF" opacity="0.12"/>
+
+                <!-- BODY & HOODIE (Electric Purple #7C3AED) -->
+                <path d="M140 260 C120 280, 110 370, 115 420 C150 425, 270 425, 305 420 C310 370, 300 280, 280 260 Z" fill="#7C3AED" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+                
+                <!-- Hoodie Pocket -->
+                <path d="M155 365 C185 360, 235 360, 265 365 C275 390, 270 415, 260 420 C225 423, 195 423, 160 420 C150 415, 145 390, 155 365 Z" fill="#6D28D9" stroke="#000000" stroke-width="5"/>
+                
+                <!-- White Drawstrings -->
+                <path d="M185 240 Q180 300 178 335" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+                <path d="M235 240 Q240 300 242 335" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="178" cy="336" r="4.5" fill="#FFFFFF"/>
+                <circle cx="242" cy="336" r="4.5" fill="#FFFFFF"/>
+
+                <!-- LEFT ARM (Raised & Enthusiastically Waving Hello) -->
+                <path d="M280 260 C320 220, 340 180, 350 130 C335 125, 315 140, 295 180 C280 210, 265 245, 260 270 Z" fill="#7C3AED" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+                <rect x="330" y="118" width="30" height="16" rx="8" transform="rotate(-30 330 118)" fill="#6D28D9" stroke="#000000" stroke-width="5"/>
+                <g transform="translate(325, 50) rotate(-10)">
+                  <path d="M12 70 C5 60, 0 45, 10 30 C15 22, 26 25, 28 35 C32 20, 44 20, 47 34 C52 20, 64 22, 66 36 C72 26, 84 30, 82 46 C78 65, 62 85, 45 88 C25 90, 15 80, 12 70 Z" fill="#FCD34D" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+                  <path d="M-8 20 C-14 32, -10 48, -12 60" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M92 20 C102 32, 98 48, 100 60" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                </g>
+
+                <!-- RIGHT ARM & FILM CLAPPERBOARD -->
+                <path d="M140 260 C110 290, 95 340, 90 380 C110 395, 135 390, 150 355 C160 330, 165 295, 160 270 Z" fill="#7C3AED" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+                <g transform="translate(45, 275) rotate(-12)">
+                  <rect x="0" y="32" width="125" height="85" rx="8" fill="#18181B" stroke="#000000" stroke-width="6"/>
+                  <g transform="rotate(-18 5 32)">
+                    <rect x="0" y="0" width="125" height="28" rx="5" fill="#18181B" stroke="#000000" stroke-width="6"/>
+                    <polygon points="15,4 32,4 18,24 1,24" fill="#FFFFFF"/>
+                    <polygon points="45,4 62,4 48,24 31,24" fill="#FFFFFF"/>
+                    <polygon points="75,4 92,4 78,24 61,24" fill="#FFFFFF"/>
+                    <polygon points="105,4 122,4 108,24 91,24" fill="#FFFFFF"/>
+                  </g>
+                  <polygon points="18,34 35,34 21,54 4,54" fill="#FFFFFF"/>
+                  <polygon points="48,34 65,34 51,54 34,54" fill="#FFFFFF"/>
+                  <polygon points="78,34 95,34 81,54 64,54" fill="#FFFFFF"/>
+                  <polygon points="108,34 125,34 111,54 94,54" fill="#FFFFFF"/>
+                  <text x="14" y="80" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12">SCENE: 01</text>
+                  <text x="72" y="80" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="12">TAKE: 01</text>
+                  <text x="14" y="103" fill="#D4F838" font-family="'Permanent Marker', cursive" font-size="14">OSSAGA 2026</text>
+                  <path d="M120 60 C135 60, 138 95, 118 98 C108 98, 108 60, 120 60 Z" fill="#FCD34D" stroke="#000000" stroke-width="5"/>
+                </g>
+
+                <!-- NECK & HOOD COLLAR -->
+                <path d="M175 220 C185 245, 235 245, 245 220 Z" fill="#FCD34D" stroke="#000000" stroke-width="6"/>
+                <path d="M145 130 C120 180, 130 250, 170 265 C200 275, 220 275, 250 265 C290 250, 300 180, 275 130 Z" fill="#6D28D9" stroke="#000000" stroke-width="8"/>
+
+                <!-- HEAD & FACE -->
+                <path d="M160 145 C150 200, 175 240, 210 242 C245 240, 270 200, 260 145 C255 110, 165 110, 160 145 Z" fill="#FCD34D" stroke="#000000" stroke-width="7" stroke-linejoin="round"/>
+                
+                <circle cx="172" cy="188" r="9" fill="#FB7185" opacity="0.4"/>
+                <circle cx="248" cy="188" r="9" fill="#FB7185" opacity="0.4"/>
+
+                <!-- EYES & EXPRESSION -->
+                <ellipse cx="184" cy="168" rx="10" ry="13" fill="#18181B"/>
+                <circle cx="181" cy="164" r="4.5" fill="#FFFFFF"/>
+                <circle cx="187" cy="173" r="2" fill="#FFFFFF"/>
+                <path d="M172 148 Q186 142 198 147" stroke="#18181B" stroke-width="4.5" stroke-linecap="round"/>
+
+                <!-- Winking Eye -->
+                <path d="M228 170 Q240 160 252 170" stroke="#18181B" stroke-width="5" stroke-linecap="round"/>
+                <path d="M226 145 Q240 138 254 146" stroke="#18181B" stroke-width="4.5" stroke-linecap="round"/>
+
+                <!-- Nose & Smile -->
+                <path d="M210 178 Q213 184 207 186" stroke="#D97706" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M194 195 Q210 218 226 195" fill="#BE123C" stroke="#000000" stroke-width="4.5" stroke-linejoin="round"/>
+                <path d="M198 196 Q210 203 222 196" fill="#FFFFFF"/>
+
+                <!-- WAVY BLACK HAIR -->
+                <path d="M148 145 C135 115, 145 75, 180 65 C195 40, 235 40, 255 60 C280 50, 305 85, 290 125 C295 135, 280 155, 270 145 C275 125, 265 105, 250 100 C240 85, 220 85, 210 100 C195 90, 175 95, 165 115 C155 125, 155 140, 148 145 Z" fill="#18181B" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+                <path d="M170 115 Q185 135 200 120 Q215 142 230 118 Q245 135 255 122" fill="#18181B" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+                <path d="M195 72 Q225 65 245 78" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. SHOWREEL & SAMBUTAN KETUA OSIS ================= -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container">
+      <div class="showreel-card">
+        
+        <!-- Left: Sambutan & Kuota Status -->
+        <div class="showreel-info">
+          <svg class="showreel-star" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke="#C084FC" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+          
+          <h2 class="showreel-title">SHOWREEL & SAMBUTAN</h2>
+          
+          <p class="showreel-desc" id="sambutan-teks">
+            "Selamat datang di portal resmi OSSAGA SMA Negeri 1 SAGARA. Website ini dirancang sebagai jembatan transparansi informasi dan ruang kolaborasi terbuka antara pengurus OSIS dengan seluruh warga sekolah."
+          </p>
+
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+            <img id="sambutan-foto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Ketua Umum OSIS" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--neon-lime);">
+            <div>
+              <div style="font-weight: 800; font-size: 1.05rem; color: #fff;" id="sambutan-nama">Muhammad Arya Pratama</div>
+              <div style="font-size: 0.8rem; color: var(--neon-lime); font-family: var(--font-mono); font-weight: 700;" id="sambutan-kelas">Ketua Umum OSIS • XI MIPA 1</div>
+            </div>
+          </div>
+
+          <!-- Kuota 30 Fungsionaris Real-Time Bar -->
+          <div class="quota-indicator-box">
+            <div class="quota-header-row">
+              <span style="color: #fff;">Status Kuota Fungsionaris</span>
+              <span style="color: var(--neon-lime);" id="quota-text">Memeriksa kuota...</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div id="quota-bar" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 8px;" id="quota-remaining">
+              Sistem login mandiri berbasis NIS terbuka untuk 30 pengurus.
+            </div>
+          </div>
+
+          <a href="javascript:void(0)" onclick="openShowreelModal()" class="showreel-link">
+            Tonton Video Profil & Sambutan
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: 16:9 Video Box -->
+        <div class="showreel-video-box" onclick="openShowreelModal()">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" alt="Showreel Thumbnail OSSAGA">
+          <div class="play-button-overlay">
+            <div class="play-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. TENTANG KAMI & VISI-MISI ================= -->
+  <section class="section" id="tentang">
+    <div class="container">
+      <div class="about-split-card">
+        
+        <!-- Left: Neon Lime Sketch Card -->
+        <div class="about-sketch-box">
+          <div class="sticky-note">
+            DISIPLIN<br>
+            KREATIF<br>
+            SINERGI
+          </div>
+
+          <svg class="about-crown-sketch" viewBox="0 0 36 28" fill="none">
+            <path d="M2 24 L5 8 L18 16 L31 8 L34 24 Z" stroke="#000000" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <!-- Confident Student Leader Ink Sketch -->
+          <svg class="about-sketch-img" viewBox="0 0 260 280" fill="none">
+            <path d="M50 240 C60 210, 80 190, 130 190 C180 190, 200 210, 210 240" stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M90 200 L130 240 L170 200" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M110 180 L110 195 H150 L150 180" stroke="#000000" stroke-width="6"/>
+            <path d="M95 120 C90 170, 110 190, 130 190 C150 190, 170 170, 165 120 C160 80, 100 80, 95 120 Z" stroke="#000000" stroke-width="6" fill="#D4F838"/>
+            <circle cx="115" cy="130" r="3.5" fill="#000000"/>
+            <circle cx="145" cy="130" r="3.5" fill="#000000"/>
+            <path d="M128 140 Q130 146 126 148" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+            <path d="M118 156 Q130 168 142 156" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+            <path d="M85 120 C75 80, 110 40, 135 45 C160 35, 190 70, 175 110 C185 120, 170 140, 165 130 C165 95, 110 95, 100 130 Z" stroke="#000000" stroke-width="7" fill="#000000"/>
+          </svg>
+        </div>
+
+        <!-- Right: Visi & Misi Container -->
+        <div class="about-content-box">
+          <h2 class="about-title">TENTANG OSSAGA</h2>
+          
+          <div style="margin-bottom: 16px;">
+            <span class="badge badge-primary" style="margin-bottom: 8px;">Visi Kepengurusan</span>
+            <p class="about-text" id="visi-text" style="font-weight: 500; color: #fff;">
+              Mewujudkan OSIS SMA Negeri 1 SAGARA sebagai organisasi yang progresif, inklusif, berlandaskan akhlak mulia, serta tanggap terhadap kemajuan ilmu pengetahuan dan teknologi demi melahirkan generasi yang unggul dan berdaya saing.
+            </p>
+          </div>
+
+          <div>
+            <span class="badge badge-royal" style="margin-bottom: 12px;">Misi Strategis</span>
+            <ul id="misi-list" style="list-style: none; padding: 0;">
+              <!-- Populated by app.js -->
+            </ul>
+          </div>
+
+          <!-- Purple Doodle Waves -->
+          <svg class="about-doodle-waves" viewBox="0 0 50 30" fill="none">
+            <path d="M2 10 Q 12 2, 22 10 T 42 10" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 22 Q 20 14, 30 22 T 50 22" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. DEWAN PIMPINAN HARIAN (BPH LEADERSHIP) ================= -->
+  <section class="section" id="pimpinan">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">DEWAN PIMPINAN HARIAN (BPH)</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <a href="admin/index.html" class="view-all-link">
+          Portal Internal BPH →
+        </a>
+      </div>
+
+      <!-- Team Grid Populated by app.js -->
+      <div class="team-grid" id="team-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. 10 SEKSI BIDANG (STYLED LIKE "SKILLS") ================= -->
+  <section class="section" id="sekbid">
+    <div class="container">
+      <div class="section-top-bar" style="margin-bottom: 20px;">
+        <div class="section-heading-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-right: -4px;">
+            <path d="M12 3 C12 3 6 10 6 14 C6 17.3 8.7 20 12 20 C15.3 20 18 17.3 18 14 C18 10 12 3 12 3 Z" fill="#38BDF8"/>
+          </svg>
+          <h3 class="section-title-doodle">10 SEKSI BIDANG (SEKBID)</h3>
+        </div>
+        <!-- Loopy Purple Doodle on Right -->
+        <svg width="60" height="30" viewBox="0 0 70 35" fill="none">
+          <path d="M5 25 C15 5, 30 5, 35 20 C40 32, 55 30, 65 10" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="skills-row">
+        <!-- Sekbid 1 -->
+        <div class="skill-pill-card" data-sekbid="01">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 01 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(14, 165, 233, 0.15); border: 2px solid #0EA5E9; color: #38BDF8;">
+            01
+          </div>
+          <div class="skill-label">Keagamaan & Moral</div>
+        </div>
+
+        <!-- Sekbid 2 -->
+        <div class="skill-pill-card" data-sekbid="02">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 02 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(147, 51, 234, 0.15); border: 2px solid #9333EA; color: #C084FC;">
+            02
+          </div>
+          <div class="skill-label">Budi Pekerti & Adab</div>
+        </div>
+
+        <!-- Sekbid 3 -->
+        <div class="skill-pill-card" data-sekbid="03">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 03 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(239, 68, 68, 0.15); border: 2px solid #EF4444; color: #F87171;">
+            03
+          </div>
+          <div class="skill-label">Bela Negara & Disiplin</div>
+        </div>
+
+        <!-- Sekbid 4 -->
+        <div class="skill-pill-card" data-sekbid="04">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 04 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(37, 99, 235, 0.15); border: 2px solid #2563EB; color: #60A5FA;">
+            04
+          </div>
+          <div class="skill-label">Akademik & Prestasi</div>
+        </div>
+
+        <!-- Sekbid 5 -->
+        <div class="skill-pill-card" data-sekbid="05">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 05 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(16, 185, 129, 0.15); border: 2px solid #10B981; color: #34D399;">
+            05
+          </div>
+          <div class="skill-label">Demokrasi & HAM</div>
+        </div>
+
+        <!-- Sekbid 6 -->
+        <div class="skill-pill-card" data-sekbid="06">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 06 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(249, 115, 22, 0.15); border: 2px solid #F97316; color: #FB923C;">
+            06
+          </div>
+          <div class="skill-label">Kreativitas Usaha</div>
+        </div>
+
+        <!-- Sekbid 7 -->
+        <div class="skill-pill-card" data-sekbid="07">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 07 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(245, 158, 11, 0.15); border: 2px solid #F59E0B; color: #FBBF24;">
+            07
+          </div>
+          <div class="skill-label">Jasmani & Olahraga</div>
+        </div>
+
+        <!-- Sekbid 8 -->
+        <div class="skill-pill-card" data-sekbid="08">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 08 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(236, 72, 153, 0.15); border: 2px solid #EC4899; color: #F472B6;">
+            08
+          </div>
+          <div class="skill-label">Seni & Budaya</div>
+        </div>
+
+        <!-- Sekbid 9 -->
+        <div class="skill-pill-card" data-sekbid="09">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 09 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(168, 85, 247, 0.15); border: 2px solid #A855F7; color: #E9D5FF;">
+            09
+          </div>
+          <div class="skill-label">TIK & Publikasi</div>
+        </div>
+
+        <!-- Sekbid 10 -->
+        <div class="skill-pill-card" data-sekbid="10">
+          <span class="sekbid-tooltip">Lihat Detail Sekbid 10 ↗</span>
+          <div class="skill-icon-box" style="background: rgba(34, 197, 94, 0.15); border: 2px solid #22C55E; color: #86EFAC;">
+            10
+          </div>
+          <div class="skill-label">Bahasa Asing</div>
+        </div>
+      </div>
+
+      <!-- Detail Box Ditampilkan Dinamis Saat Hover / Klik Sekbid -->
+      <div id="sekbid-detail-display"></div>
+    </div>
+  </section>
+
+  <!-- ================= 6. PROGRAM KERJA (PROKER) ================= -->
+  <section class="section" id="proker">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">PROGRAM KERJA (PROKER)</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-btn proker-filter-btn active" data-status="all">Semua Status</button>
+          <button class="filter-btn proker-filter-btn" data-status="Terlaksana">Terlaksana</button>
+          <button class="filter-btn proker-filter-btn" data-status="Sedang Berjalan">Sedang Berjalan</button>
+          <button class="filter-btn proker-filter-btn" data-status="Rencana">Rencana</button>
+        </div>
+      </div>
+
+      <!-- Proker Grid Populated by app.js -->
+      <div class="grid-3" id="proker-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. WARTA & PENGUMUMAN (BERITA) ================= -->
+  <section class="section" id="warta">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">WARTA & PENGUMUMAN</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Real-Time Search Bar -->
+        <div class="search-bar-wrap">
+          <svg class="search-icon icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="berita-search-input" class="search-input" placeholder="Cari warta atau pengumuman...">
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs for News -->
+      <div class="filter-tabs" style="margin-bottom: 24px;">
+        <button class="filter-btn berita-filter-btn active" data-filter="all">Semua Kategori</button>
+        <button class="filter-btn berita-filter-btn" data-filter="Kegiatan">Kegiatan</button>
+        <button class="filter-btn berita-filter-btn" data-filter="Prestasi">Prestasi</button>
+        <button class="filter-btn berita-filter-btn" data-filter="Pengumuman">Pengumuman</button>
+        <button class="filter-btn berita-filter-btn" data-filter="Akademik">Akademik</button>
+      </div>
+
+      <!-- News Grid Populated by app.js -->
+      <div class="grid-3" id="berita-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. AGENDA & KALENDER ================= -->
+  <section class="section" id="agenda">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">AGENDA & KALENDER KEGIATAN</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <a href="admin/index.html" class="view-all-link">
+          Tambah Agenda Baru ↗
+        </a>
+      </div>
+
+      <div class="grid-2" id="agenda-list">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. LENSA GALERI ================= -->
+  <section class="section" id="galeri">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">LENSA OSSAGA (GALERI)</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-btn galeri-filter-btn active" data-galeri="all">Semua Foto</button>
+          <button class="filter-btn galeri-filter-btn" data-galeri="Kegiatan">Kegiatan</button>
+          <button class="filter-btn galeri-filter-btn" data-galeri="LDKS">LDKS</button>
+          <button class="filter-btn galeri-filter-btn" data-galeri="Porseni">Porseni</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="galeri-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. SAGARA ARCADE & INTERACTIVE ZONE ================= -->
+  <section class="section" id="arcade">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <svg class="star-burst" viewBox="0 0 24 24" fill="#D4F838">
+            <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/>
+          </svg>
+          <h3 class="section-title-doodle">SAGARA ARCADE ZONE</h3>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--neon-lime); font-family: var(--font-mono); font-weight: 700;">
+          Level Up Leadership & Chill Out
+        </span>
+      </div>
+
+      <div class="arcade-container">
+        <!-- Top Switch Tabs -->
+        <div class="arcade-top-bar">
+          <div class="arcade-tab-group">
+            <button class="arcade-tab-btn active" id="tab-game-catch" onclick="switchArcadeMode('catch')">
+              🎮 Tangkap Aspirasi (Mini Game)
+            </button>
+            <button class="arcade-tab-btn" id="tab-game-quiz" onclick="switchArcadeMode('quiz')">
+              ⚡ Kuis Kepemimpinan OSIS
+            </button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--font-mono);">
+            Mode: <span id="arcade-current-mode" style="color: var(--neon-lime); font-weight: 700;">2D Action Runner</span>
+          </div>
+        </div>
+
+        <!-- MODE 1: Canvas Mini Game "Tangkap Aspirasi" -->
+        <div id="arcade-catch-view">
+          <!-- Game HUD -->
+          <div class="arcade-hud">
+            <div class="hud-stat-box">
+              <span class="hud-stat-label">Skor Kamu</span>
+              <span class="hud-stat-val val-lime" id="game-score">0</span>
+            </div>
+            <div class="hud-stat-box">
+              <span class="hud-stat-label">Sisa Waktu</span>
+              <span class="hud-stat-val" id="game-timer">30s</span>
+            </div>
+            <div class="hud-stat-box">
+              <span class="hud-stat-label">Combo</span>
+              <span class="hud-stat-val val-purple" id="game-combo">x1</span>
+            </div>
+            <div class="hud-stat-box">
+              <span class="hud-stat-label">High Score</span>
+              <span class="hud-stat-val" id="game-highscore">0</span>
+            </div>
+            <button id="btn-start-arcade" class="btn-lime" style="padding: 10px 22px; font-size: 0.85rem;">
+              Mulai Game ▶
+            </button>
+          </div>
+
+          <!-- Canvas Viewport -->
+          <div class="arcade-viewport">
+            <canvas id="arcadeCanvas" width="800" height="450"></canvas>
+            
+            <!-- Overlay Screen (Before Start / Game Over) -->
+            <div class="arcade-overlay-screen" id="arcade-overlay">
+              <h3 id="overlay-title" style="font-size: 2rem; font-weight: 900; color: #FFFFFF; margin-bottom: 10px;">
+                TANGKAP ASPIRASI SAGARA! 🚀
+              </h3>
+              <p id="overlay-desc" style="color: var(--text-muted); font-size: 0.95rem; max-width: 500px; margin-bottom: 22px; line-height: 1.6;">
+                Bantu Maskot OSSAGA menangkap Ide Aspirasi (⭐ +10), Proker Sukses (💎 +25), dan hindari Surat Deadline Menumpuk (💣 -15) selama 30 detik!
+              </p>
+              <button id="overlay-btn-play" class="btn-lime" style="font-size: 1rem; padding: 14px 34px;">
+                Mainkan Sekarang (Spasi / Klik)
+              </button>
+              <div style="margin-top: 18px; font-size: 0.78rem; color: var(--text-dim); font-family: var(--font-mono);">
+                Gunakan Keyboard Panah ◀ ▶ atau Sentuh Layar di Ponsel
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Touch Controls -->
+          <div class="arcade-touch-row">
+            <button class="arcade-touch-btn" id="ctrl-left" aria-label="Gerak Kiri">◀</button>
+            <button class="arcade-touch-btn" id="ctrl-right" aria-label="Gerak Kanan">▶</button>
+          </div>
+        </div>
+
+        <!-- MODE 2: Kuis Kepemimpinan OSSAGA -->
+        <div id="arcade-quiz-view" style="display: none;">
+          <div class="trivia-box" id="trivia-container">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. STRUKTUR FUNGSIONARIS (30 KUOTA NIS) ================= -->
+  <section class="section" id="struktur">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">STRUKTUR 30 FUNGSIONARIS (NIS)</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <a href="auth/register.html" class="view-all-link">
+          Daftar Menjadi Pengurus ↗
+        </a>
+      </div>
+
+      <div class="grid-4" id="struktur-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. KOTAK ASPIRASI PUBLIK ================= -->
+  <section class="section" id="aspirasi">
+    <div class="container">
+      <div class="section-top-bar">
+        <div class="section-heading-wrap">
+          <h3 class="section-title-doodle">KOTAK ASPIRASI SISWA</h3>
+          <svg class="squiggly-line" viewBox="0 0 45 15" fill="none">
+            <path d="M2 8 Q 8 2, 14 8 T 26 8 T 38 8" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--neon-lime); font-family: var(--font-mono); font-weight: 700;">
+          Terbuka Bebas Tanpa Harus Login
+        </span>
+      </div>
+
+      <div class="aspirasi-container">
+        
+        <!-- Form Kirim Aspirasi -->
+        <div class="aspirasi-form-card">
+          <h4 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Kirim Aspirasi & Masukan</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 22px;">
+            Setiap ide, kritik, dan aspirasimu dibaca langsung oleh pimpinan OSIS dan ditindaklanjuti secara nyata.
+          </p>
+
+          <form id="aspirasi-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label" for="asp-nama">Nama Lengkap (Opsional)</label>
+                <input type="text" id="asp-nama" class="form-control" placeholder="Anonim jika dikosongkan">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="asp-kelas">Kelas / Rombel</label>
+                <input type="text" id="asp-kelas" class="form-control" placeholder="Misal: X-1, XI MIPA 2">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label" for="asp-kontak">No. WhatsApp / Email</label>
+                <input type="text" id="asp-kontak" class="form-control" placeholder="Untuk konfirmasi tindak lanjut">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="asp-kategori">Kategori Topik</label>
+                <select id="asp-kategori" class="form-control">
+                  <option value="Fasilitas & Sarpras">Fasilitas & Sarpras</option>
+                  <option value="Kegiatan & Ekstrakurikuler">Kegiatan & Ekstrakurikuler</option>
+                  <option value="Akademik & Pembelajaran">Akademik & Pembelajaran</option>
+                  <option value="Ketertiban & Disiplin">Ketertiban & Disiplin</option>
+                  <option value="Ide Kreatif & Inovasi">Ide Kreatif & Inovasi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="asp-pesan">Uraian Aspirasi *</label>
+              <textarea id="asp-pesan" class="form-control" placeholder="Sampaikan ide, kritik yang membangun, atau kebutuhanmu dengan jelas..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-lime" style="width: 100%;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Kirim Aspirasi Sekarang
+            </button>
+          </form>
+        </div>
+
+        <!-- Daftar Aspirasi Masuk & Balasan Resmi -->
+        <div>
+          <h4 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Aspirasi Terkini</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 22px;">
+            Aspirasi siswa yang sedang dan telah ditanggapi resmi oleh pengurus OSIS.
+          </p>
+          <div class="aspirasi-list-wrap" id="aspirasi-public-list">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 12. FOOTER (LET'S MAKE SOMETHING DOPE!) ================= -->
+  <footer class="footer-dope" id="contact">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Giant Quirky Headline -->
+        <div>
+          <h2 class="dope-headline">
+            MARI BERKARYA<br>
+            BERSAMA <span class="dope-highlight-wrap">
+              OSSAGA!
+              <!-- Chalk Oval Circle around OSSAGA -->
+              <svg class="doodle-chalk-oval" viewBox="0 0 160 70" fill="none">
+                <ellipse cx="80" cy="35" rx="72" ry="28" stroke="#7C3AED" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="320 8" transform="rotate(-3 80 35)"/>
+              </svg>
+            </span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1rem; margin-top: 14px; max-width: 480px;">
+            Ruang kreasi kepemimpinan muda SMA Negeri 1 SAGARA. Bersatu mewujudkan inovasi dan prestasi nyata!
+          </p>
+        </div>
+
+        <!-- Contact & Official Socials -->
+        <div class="dope-contact-col">
+          <div class="contact-item-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@ossaga.sch.id</span>
+          </div>
+
+          <div class="contact-item-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Kampus SMA Negeri 1 SAGARA, Jawa Barat</span>
+          </div>
+
+          <div class="contact-item-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+62 812-3456-7890 (Sekretariat OSIS)</span>
+          </div>
+
+          <div class="social-circle-row">
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="social-icon-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </a>
+            <a href="admin/index.html" class="social-icon-btn" title="Portal Admin" aria-label="Portal Admin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Peeking Cartoon Mascot in Bottom Right with Peace Sign -->
+      <div class="peeking-mascot-wrap">
+        <svg viewBox="0 0 100 100" fill="none" style="width: 100%; height: 100%;">
+          <path d="M20 100 C15 50, 40 30, 70 30 C95 30, 100 65, 100 100 Z" fill="#38BDF8" stroke="#000000" stroke-width="4"/>
+          <circle cx="50" cy="55" r="4" fill="#000000"/>
+          <circle cx="75" cy="55" r="4" fill="#000000"/>
+          <path d="M50 68 Q62 82 74 68 Z" fill="#000000"/>
+          <g transform="translate(18, 15)">
+            <path d="M12 40 L10 15 Q14 8 18 15 L20 30 M20 30 L26 12 Q30 5 34 12 L30 35" stroke="#38BDF8" stroke-width="7" stroke-linecap="round"/>
+            <path d="M12 40 L10 15 Q14 8 18 15 L20 30 M20 30 L26 12 Q30 5 34 12 L30 35" stroke="#000000" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2026 OSSAGA - Organisasi Siswa Intra Sekolah SMA Negeri 1 SAGARA. All Rights Reserved.</div>
+        <div>1 Superadmin • Admin Pimpinan • 30 Anggota Pengurus NIS • Akses Publik Bebas</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODAL GLOBAL (BERITA, SHOWREEL, FOTO LIGHTBOX) ================= -->
+  <div class="modal-overlay" id="global-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Judul</h3>
+        <button class="modal-close" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Filled dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function openShowreelModal() {
+      const modal = document.getElementById('global-modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+
+      title.textContent = 'Profil & Sambutan Resmi OSSAGA 2026';
+      body.innerHTML = `
+        <div style="aspect-ratio: 16/9; width: 100%; border-radius: 14px; overflow: hidden; background: #000; margin-bottom: 20px;">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Video Profil OSIS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 8px;">Kabinet Nawa Cita Nawasena - SMA Negeri 1 SAGARA</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 16px;">
+          Video dokumenter perjalanan program kerja, pelatihan kepemimpinan LDKS, dan serangkaian inovasi digital yang diinisiasi oleh 30 fungsionaris aktif OSIS periode 2026/2027.
+        </p>
+        <div style="display: flex; gap: 10px;">
+          <a href="auth/register.html" class="btn btn-lime btn-sm">Daftar Anggota Pengurus ↗</a>
+        </div>
+      `;
+      modal.classList.add('active');
+    }
+  </script>
+</body>
+</html>

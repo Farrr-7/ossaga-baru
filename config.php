@@ -1,0 +1,30 @@
+<?php
+/**
+ * Konfigurasi Database PDO OSSAGA
+ */
+
+$host = 'localhost';
+$db_name = 'ossaga_db';
+$db_user = 'root';
+$db_pass = '';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+try {
+    $pdo = new PDO($dsn, $db_user, $db_pass, $options);
+} catch (\PDOException $e) {
+    // Return JSON error jika diakses via API
+    header('Content-Type: application/json');
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Koneksi ke database MySQL gagal: ' . $e->getMessage() . '. Pastikan service MySQL di XAMPP sudah dijalankan dan database "ossaga_db" sudah di-import.'
+    ]);
+    exit;
+}

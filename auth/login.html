@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Pengurus & Anggota OSIS - OSSAGA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-container">
+    <div class="auth-header">
+      <div class="auth-logo-badge">OS</div>
+      <h1 class="auth-title">Portal Pengurus OSIS</h1>
+      <p class="auth-subtitle">SMA Negeri 1 SAGARA • Akses Khusus Fungsionaris & Administrator</p>
+    </div>
+
+    <!-- Tabs Pilihan Login -->
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab-btn active" id="tab-anggota-btn" onclick="switchTab('anggota')">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        Fungsionaris (NIS)
+      </button>
+      <button type="button" class="auth-tab-btn" id="tab-admin-btn" onclick="switchTab('admin')">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Administrator
+      </button>
+    </div>
+
+    <!-- 1. FORM LOGIN ANGGOTA OSIS (VIA NIS) -->
+    <form id="form-login-anggota" onsubmit="handleLoginAnggota(event)">
+      <div class="quota-banner">
+        <div class="quota-banner-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" style="width: 22px; height: 22px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <div class="quota-banner-title">Khusus 30 Anggota Pengurus Aktif</div>
+          <div class="quota-banner-desc">Gunakan Nomor Induk Siswa (NIS) yang telah terdaftar resmi.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nis-input">Nomor Induk Siswa (NIS) *</label>
+        <input type="text" id="nis-input" class="form-control" placeholder="Masukkan Nomor Induk Siswa" required autofocus autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nis-password">Kata Sandi Akun *</label>
+        <input type="password" id="nis-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; font-size: 0.85rem;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--text-muted);">
+          <input type="checkbox" id="remember-me"> Ingat sesi saya
+        </label>
+        <a href="register.html" style="color: var(--light-blue); font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+          Registrasi Anggota
+          <svg class="icon-svg" viewBox="0 0 24 24" style="width: 13px; height: 13px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 13px;">
+        <svg class="icon-svg" viewBox="0 0 24 24"><line x1="15" y1="3" x2="15" y2="7"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/><path d="M21 12a9 9 0 1 1-9-9"/></svg>
+        Masuk Portal Fungsionaris
+      </button>
+    </form>
+
+    <!-- 2. FORM LOGIN SUPERADMIN & ADMIN -->
+    <form id="form-login-admin" style="display: none;" onsubmit="handleLoginAdmin(event)">
+      <div class="quota-banner">
+        <div class="quota-banner-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" style="width: 22px; height: 22px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="quota-banner-title">Panel Manajemen & Super Administrator</div>
+          <div class="quota-banner-desc">Akses autentikasi khusus pimpinan dan pembina OSIS.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="admin-identifier">Username / Email Administrator *</label>
+        <input type="text" id="admin-identifier" class="form-control" placeholder="Masukkan username atau email" required autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="admin-password">Kata Sandi Administrator *</label>
+        <input type="password" id="admin-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 13px; margin-top: 10px;">
+        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Otentikasi Administrator
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <div>Bukan pengurus OSIS? <a href="../index.html">Kembali ke Beranda Publik</a></div>
+      <div class="security-notice">
+        <svg class="icon-svg" viewBox="0 0 24 24" style="width: 13px; height: 13px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Sistem Autentikasi Terenkripsi & Sesi Dilindungi
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="../db.js"></script>
+  <script>
+    function switchTab(type) {
+      const tabAnggota = document.getElementById('tab-anggota-btn');
+      const tabAdmin = document.getElementById('tab-admin-btn');
+      const formAnggota = document.getElementById('form-login-anggota');
+      const formAdmin = document.getElementById('form-login-admin');
+
+      if (type === 'anggota') {
+        tabAnggota.classList.add('active');
+        tabAdmin.classList.remove('active');
+        formAnggota.style.display = 'block';
+        formAdmin.style.display = 'none';
+        document.getElementById('nis-input').focus();
+      } else {
+        tabAdmin.classList.add('active');
+        tabAnggota.classList.remove('active');
+        formAdmin.style.display = 'block';
+        formAnggota.style.display = 'none';
+        document.getElementById('admin-identifier').focus();
+      }
+    }
+
+    // Handler Login Anggota (NIS)
+    function handleLoginAnggota(e) {
+      e.preventDefault();
+      const nis = document.getElementById('nis-input').value.trim();
+      const pwd = document.getElementById('nis-password').value;
+
+      if (!nis || !pwd) {
+        showToast('NIS dan kata sandi wajib diisi!', 'error');
+        return;
+      }
+
+      // Verifikasi Autentikasi via Database Engine
+      const res = OssagaDB.login(nis, pwd);
+      if (res.success) {
+        showToast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = '../admin/index.html';
+        }, 600);
+      } else {
+        showToast(res.message, 'error');
+      }
+    }
+
+    // Handler Login Admin
+    function handleLoginAdmin(e) {
+      e.preventDefault();
+      const id = document.getElementById('admin-identifier').value.trim();
+      const pwd = document.getElementById('admin-password').value;
+
+      if (!id || !pwd) {
+        showToast('Username dan kata sandi administrator wajib diisi!', 'error');
+        return;
+      }
+
+      const res = OssagaDB.login(id, pwd);
+      if (res.success) {
+        showToast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = '../admin/index.html';
+        }, 600);
+      } else {
+        showToast(res.message, 'error');
+      }
+    }
+
+    function showToast(message, type = 'success') {
+      let container = document.getElementById('toast-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+      }
+
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      let icon = (type === 'success') ? '✓' : '✕';
+      toast.innerHTML = `
+        <span style="font-weight: 800; font-size: 1.1rem; color: var(--electric-blue);">${icon}</span>
+        <span style="flex-grow: 1;">${message}</span>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
